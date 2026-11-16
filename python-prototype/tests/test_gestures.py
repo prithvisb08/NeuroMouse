@@ -119,3 +119,32 @@ def test_drag_and_drop_controller():
     assert moved and controller.is_dragging
     controller.end_drag(x=150.0, y=150.0)
     assert not controller.is_dragging
+
+
+def test_universal_headphone_classification():
+    from gestures.headphone_listener import UniversalHeadphoneMonitor
+
+    test_cases = [
+        ("AirPods Pro", "Apple"),
+        ("AirPods Max - Silver", "Apple"),
+        ("prithvi’s AirPods", "Apple"),
+        ("Sony WH-1000XM5", "Sony"),
+        ("WF-1000XM4 Wireless", "Sony"),
+        ("Bose QuietComfort 45", "Bose"),
+        ("Sennheiser Momentum 4", "Sennheiser"),
+        ("JBL Live 770NC", "JBL"),
+        ("Beats Studio Pro", "Beats"),
+        ("boAt Rockerz 255 Pro+", "boAt"),
+        ("Galaxy Buds2 Pro", "Samsung"),
+        ("Google Pixel Buds Pro", "Google"),
+        ("Jabra Elite 85h", "Jabra"),
+        ("Soundcore Space One", "Soundcore"),
+        ("Beyerdynamic DT 770 PRO", "Audiophile / Studio"),
+        ("Logitech G733 Gaming Headset", "Gaming Headset"),
+    ]
+
+    for name, expected_brand in test_cases:
+        profile = UniversalHeadphoneMonitor.classify(name)
+        assert profile.brand == expected_brand, f"Failed for {name}: got {profile.brand}, expected {expected_brand}"
+        assert profile.is_connected is True
+        assert UniversalHeadphoneMonitor.is_known_brand(name) is True

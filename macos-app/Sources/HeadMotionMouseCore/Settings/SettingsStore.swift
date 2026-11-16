@@ -49,6 +49,10 @@ public struct AppSettings: Codable, Sendable {
     public var jawDropRatioThreshold: Double
     public var headPitchScrollMode: Bool
     public var jblHeadphoneClicksEnabled: Bool
+    public var headphoneClicksEnabled: Bool {
+        get { jblHeadphoneClicksEnabled }
+        set { jblHeadphoneClicksEnabled = newValue }
+    }
     public var pitchScrollSensitivity: Double
     public var pitchScrollDeadZoneDeg: Double
 

@@ -7,6 +7,7 @@ from .dwell_click import DwellClickDetector, DwellState
 from .blink_detector import BlinkDetector
 from .nod_detector import NodDetector
 from .gesture_manager import GestureManager
+from .headphone_listener import UniversalHeadphoneMonitor, HeadphoneProfile
 
 __all__ = [
     "DwellClickDetector",
@@ -14,4 +15,6 @@ __all__ = [
     "BlinkDetector",
     "NodDetector",
     "GestureManager",
+    "UniversalHeadphoneMonitor",
+    "HeadphoneProfile",
 ]

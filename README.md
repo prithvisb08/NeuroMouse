@@ -13,7 +13,8 @@
 
 ## Key Capabilities
 
-- **Speech & Headphone Immunity:** Anchors strictly to the **Rigid Upper Craniofacial Triad** (nasion, nose tip, eye canthi, forehead), completely ignoring jaw, chin, and ear contours. Seamlessly supports wearing over-ear headphones (such as the **JBL Live 770NC**) and speaking while tracking.
+- **Speech & Universal Headphone Immunity:** Anchors strictly to the **Rigid Upper Craniofacial Triad** (nasion, nose tip, eye canthi, forehead), completely ignoring jaw, chin, and ear contours. Seamlessly supports wearing any over-ear headphones, on-ear headphones, or TWS earbuds (Apple AirPods, Sony, Bose, JBL, Sennheiser, Beats, Galaxy Buds, etc.) and speaking while tracking.
+- **Universal Headphone Hardware Clicker:** Tap your headphone earcup, pinch your AirPods stem, or click the inline remote to trigger instant mouse clicks without touching the keyboard or mouse (1x Tap = Left Click, 2x Tap = Right Click). Universal Bluetooth AVRCP & media-key integration works with virtually any wireless or wired headphone.
 - **Translation-Invariant Pose Recovery:** Leaning sideways in your chair does not drift the cursor. Pure 3D rotation $\mathbf{R}$ is isolated from head translation $\mathbf{t}$.
 - **Casiez 1€ Adaptive Filter & Smooth Dead-Zone:** Eliminates physiological resting tremor at low velocities while maintaining instantaneous response during rapid sweeps.
 - **Hands-Free Dwell Clicking & Spatial HUD:** Precision dwell clicking within an 18 px radius with a live circular progress ring rendered around the cursor, cooldown refractory periods, and re-arm distance constraints.
@@ -151,11 +152,39 @@ open dist/HeadMotionMouse.app
 
 ---
 
+## Universal Headphone & Audio Device Compatibility
+
+NeuroMouse is designed to be **100% universal and brand-agnostic**. It dynamically detects connected audio devices, displays device-specific telemetry and branding, and intercepts Bluetooth AVRCP media taps for instant hands-free clicks:
+
+| Ecosystem / Brand | Supported Models | Hardware Trigger Gesture |
+| :--- | :--- | :--- |
+| **Apple** | AirPods (Gen 1/2/3/4), AirPods Pro (Gen 1/2), AirPods Max, EarPods | Force sensor stem squeeze, Digital Crown press |
+| **Sony** | WH-1000XM4, WH-1000XM5, WF-1000XM4, WF-1000XM5, LinkBuds, MDR, INZONE | Right earcup capacitive tap, earbud touch sensor |
+| **Bose** | QuietComfort 35 / 45 / Ultra, Headphones 700, Sport Earbuds | Multi-function action button, earcup touch surface |
+| **Sennheiser** | Momentum 4, Momentum True Wireless 3/4, Accentum, HD 450BT, CX | Touchpad tap, multi-function button |
+| **Beats** | Studio Pro, Solo 4, Fit Pro, Powerbeats Pro, Beats Flex | 'b' logo button press, stem pinch |
+| **JBL** | Live 770NC, Live 660NC, Tune 760NC/510BT, Tour One, Quantum, Wave | Earcup touch surface, playback button |
+| **Samsung** | Galaxy Buds, Buds+, Buds2, Buds Pro, Buds Live, Buds FE, Buds3 / Pro | Earbud capacitive touch tap / double tap |
+| **Google** | Pixel Buds, Pixel Buds Pro, Pixel Buds A-Series | Earbud touch surface tap / double tap |
+| **boAt** | Rockerz 255 / 330 / 550, Airdopes series, Nirvana | Multi-function button / touch sensor |
+| **Jabra** | Elite 85h, Elite 7/8/10, Evolve series | Physical button press |
+| **Anker Soundcore**| Space One, Life Q30 / Q35, Liberty 4 / NC | Touchpad / multi-function button |
+| **Marshall** | Major IV / V, Monitor II ANC, Minor, Motif | Multi-directional control knob |
+| **Skullcandy** | Crusher Evo / ANC, Hesh ANC, Indy, Dime | Main button press / touch sensor |
+| **Audio-Technica** | ATH-M50xBT2, ATH-SQ1TW | Earcup control button / touch |
+| **Gaming Headsets** | Logitech G733/G435, Razer BlackShark/Barracuda, SteelSeries Arctis, HyperX Cloud, Corsair | Inline remote / headset media button |
+| **Audiophile / Studio** | Beyerdynamic DT 770/990, Shure AONIC, B&O Beoplay, Bowers & Wilkins Px7/Px8 | Dedicated control button |
+| **Generic / Wired** | Any Bluetooth A2DP/HFP headset, USB DAC/headset, 3.5mm wired headphone | Inline remote button / Bluetooth media key |
+
+- **Single Tap (1x):** Left Click
+- **Double Tap (2x):** Right Click
+
+---
+
 ## Verification Results
 
 | Test Target | Runner | Result |
 | :--- | :--- | :--- |
-| **Python Unified Suite** | `pytest 9.2.0` | **24 passed** (100% pass, cross-platform) |
-| **Native Swift Suite** | `HeadMotionMouseTestsRunner` | **12 passed** in 1.30s (100% pass on macOS) |
+| **Python Unified Suite** | `pytest 9.2.0` | **25 passed** (100% pass, cross-platform) |
+| **Native Swift Suite** | `HeadMotionMouseTestsRunner` | **17 passed** in 2.33s (100% pass on macOS) |
 | **macOS Bundle Packaging** | `codesign` verification | **Valid on disk, satisfies designated requirement** |
-# NeuroMouse

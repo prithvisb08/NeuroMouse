@@ -1,7 +1,7 @@
 # Landmark Mapping Specification: MediaPipe vs Apple Vision
 
 ## 1. Overview & Rigid Upper Craniofacial Anchor Set
-To guarantee complete immunity against speech deformation (jaw and lip movement) and occlusion from over-ear headphones (e.g. JBL Live 770NC covering ears and temples), HeadMotion Mouse anchors exclusively to the **Rigid Upper Craniofacial Triad**.
+To guarantee complete immunity against speech deformation (jaw and lip movement) and occlusion from any over-ear headphones (e.g. JBL Live 770NC, Sony WH-1000XM5, Bose QuietComfort, Apple AirPods Max) or earbuds covering ears and temples, HeadMotion Mouse anchors exclusively to the **Rigid Upper Craniofacial Triad**.
 
 Lower facial landmarks (menton, gnathion, cheilion, jawline gonion) are strictly omitted from 3D pose estimation.
 

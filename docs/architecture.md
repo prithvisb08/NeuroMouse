@@ -27,7 +27,7 @@ flowchart TD
 ```
 
 ## 2. Speech & Headphone Immunity: The Upper Craniofacial Triad
-Standard facial pose estimators include the chin (menton) and mouth corners (cheilion). When speaking, eating, or laughing, chin deflection introduces massive pitch artifacts (cursor dips downward). Furthermore, over-ear headphones (such as the JBL Live 770NC) occlude ear and temple contours.
+Standard facial pose estimators include the chin (menton) and mouth corners (cheilion). When speaking, eating, or laughing, chin deflection introduces massive pitch artifacts (cursor dips downward). Furthermore, over-ear headphones (such as JBL Live 770NC, Sony WH-1000XM5, Bose QuietComfort, AirPods Max, etc.) occlude ear and temple contours.
 
 HeadMotion Mouse solves this by anchoring strictly to the **Rigid Upper Craniofacial Triad**:
 - **Pronasale (Nose Tip)**

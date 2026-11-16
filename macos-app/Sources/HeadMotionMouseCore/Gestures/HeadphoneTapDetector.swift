@@ -2,7 +2,14 @@ import Foundation
 import AppKit
 import MediaPlayer
 
-/// Listens for Bluetooth headphone (e.g. JBL Live 770NC) tap actions.
+/// Listens for Universal Bluetooth & Wired Headphone / Earbud tap actions:
+/// - Apple AirPods (stem squeeze / Digital Crown press)
+/// - Sony WH-1000XM4/XM5 & WF-1000XM4/XM5 (touch pad tap / double tap)
+/// - Bose QuietComfort & 700 (multi-function button / touch surface)
+/// - JBL Live, Tune, Quantum (earcup tap / button)
+/// - Beats Studio, Solo, Fit Pro, Powerbeats ('b' button press)
+/// - Samsung Galaxy Buds, Google Pixel Buds (capacitive tap / double tap)
+/// - boAt, Jabra, Anker Soundcore, Marshall, Skullcandy, Sennheiser & all media-enabled headsets.
 /// Dispatches:
 /// - Single Tap -> Left Click
 /// - Double Tap -> Right Click

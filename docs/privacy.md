@@ -19,7 +19,7 @@ Users can toggle Privacy Shutter Mode at any time (via hotkey `P` or the Dashboa
 - Underlying mathematical craniofacial tracking continues uninterrupted.
 
 ## 4. Headphone & Hardware Agnosticism
-- **Over-Ear Headphone Immunity (JBL Live 770NC):**
-  Users often wear standard over-ear consumer headphones during desk work. HeadMotion Mouse anchors exclusively to the **Rigid Upper Craniofacial Triad** (nasion, nose bridge, eye canthi, forehead), which are completely visible even when large over-ear cups cover the ears and temples.
+- **Universal Over-Ear & In-Ear Headphone Immunity:**
+  Users frequently wear over-ear headphones (such as JBL Live 770NC, Sony WH-1000XM5, Bose QuietComfort, Apple AirPods Max) or TWS earbuds (AirPods Pro, Galaxy Buds) during desk work. HeadMotion Mouse anchors exclusively to the **Rigid Upper Craniofacial Triad** (nasion, nose bridge, eye canthi, forehead), which are completely visible even when large over-ear cups or headbands cover the ears and temples.
 - **Zero IMU Dependency:**
   The system requires no external inertial measurement units, no Arduino/ESP32, no Bluetooth sensors, and does not require AirPods `CMHeadphoneMotionManager` APIs.

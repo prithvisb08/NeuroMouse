@@ -348,6 +348,42 @@ func main() {
         detector.cleanup()
     }
 
+    runTest("Universal Headphone Device Classification Matrix") {
+        let testDevices: [(name: String, expectedBrand: String, expectedIcon: String)] = [
+            ("AirPods Pro", "Apple", "airpodspro"),
+            ("AirPods Max - Midnight", "Apple", "airpodsmax"),
+            ("prithvi’s AirPods", "Apple", "airpods.gen3"),
+            ("Sony WH-1000XM5", "Sony", "headphones"),
+            ("WF-1000XM4 Wireless Earbuds", "Sony", "earbuds"),
+            ("Bose QuietComfort Ultra", "Bose", "headphones"),
+            ("Sennheiser Momentum 4", "Sennheiser", "headphones"),
+            ("JBL Live 770NC", "JBL", "headphones"),
+            ("JBL Tune 510BT", "JBL", "headphones"),
+            ("JBL Wave Buds", "JBL", "earbuds"),
+            ("Beats Studio Pro", "Beats", "headphones"),
+            ("Powerbeats Pro", "Beats", "earbuds"),
+            ("boAt Rockerz 255 Pro+", "boAt", "headphones"),
+            ("Galaxy Buds+ (167D)", "Samsung", "earbuds"),
+            ("Google Pixel Buds Pro", "Google", "earbuds"),
+            ("Jabra Elite 85h", "Jabra", "headset"),
+            ("Soundcore Space One", "Soundcore", "headphones"),
+            ("ATH-M50xBT2", "Audio-Technica", "headphones"),
+            ("Logitech G733 Wireless", "Gaming Headset", "headset"),
+            ("Beyerdynamic DT 770 PRO", "Audiophile / Studio", "headphones")
+        ]
+
+        for item in testDevices {
+            let profile = HeadphoneConnectionMonitor.classifyHeadphone(name: item.name)
+            assert(profile.brand == item.expectedBrand, "Failed brand for \(item.name): got \(profile.brand), expected \(item.expectedBrand)")
+            assert(profile.systemIconName == item.expectedIcon, "Failed icon for \(item.name): got \(profile.systemIconName), expected \(item.expectedIcon)")
+            assert(HeadphoneConnectionMonitor.isKnownHeadphoneBrand(item.name) == true, "Failed known brand check for \(item.name)")
+        }
+
+        // Test exclusion of internal speakers
+        assert(HeadphoneConnectionMonitor.evaluateDevice(name: "MacBook Air Speakers", transportType: 0x626c746e, hasOutput: true) == nil)
+        assert(HeadphoneConnectionMonitor.evaluateDevice(name: "MacBook Pro Internal Microphone", transportType: 0x626c746e, hasOutput: false) == nil)
+    }
+
     print("==========================================================")
     print("  Total Tests: \(passedCount + failedCount) | Passed: \(passedCount) | Failed: \(failedCount)")
     print("==========================================================")

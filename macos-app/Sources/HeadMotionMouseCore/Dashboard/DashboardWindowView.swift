@@ -140,9 +140,9 @@ public struct DashboardWindowView: View {
 
                 badge(
                     text: appState.headphoneMonitor.isConnected ?
-                        (appState.headphoneMonitor.isJblModel ? "JBL 770NC Connected" : appState.headphoneMonitor.deviceName) :
-                        "JBL Disconnected",
-                    icon: appState.headphoneMonitor.isConnected ? "headphones" : "headphones.slash",
+                        "\(appState.headphoneMonitor.deviceName) Connected" :
+                        "No Headphone Connected",
+                    icon: appState.headphoneMonitor.systemIconName,
                     color: appState.headphoneMonitor.isConnected ? .green : .red
                 )
 
@@ -240,9 +240,9 @@ public struct DashboardWindowView: View {
             HStack {
                 Label(
                     appState.headphoneMonitor.isConnected ?
-                        (appState.headphoneMonitor.isJblModel ? "JBL Live 770NC Connected" : appState.headphoneMonitor.deviceName) :
-                        "JBL 770NC Not Connected",
-                    systemImage: appState.headphoneMonitor.isConnected ? "headphones" : "headphones.slash"
+                        "\(appState.headphoneMonitor.deviceName) (\(appState.headphoneMonitor.deviceCategory))" :
+                        "No Headphone Connected",
+                    systemImage: appState.headphoneMonitor.systemIconName
                 )
                 .font(.caption.bold())
                 .foregroundColor(appState.headphoneMonitor.isConnected ? .green : .red)
@@ -261,23 +261,23 @@ public struct DashboardWindowView: View {
 
             VStack(alignment: .leading, spacing: 4) {
                 HStack {
-                    Text("🎧 Single Tap:")
+                    Text("🎧 Single Tap / Stem Pinch:")
                         .font(.caption2.bold())
-                    Text("Left Click (One-Click)")
+                    Text("Left Click (AirPods, Sony, Bose, JBL, Beats, etc.)")
                         .font(.caption2)
                         .foregroundColor(.secondary)
                 }
                 HStack {
-                    Text("🎧 Double Tap:")
+                    Text("🎧 Double Tap / Double Pinch:")
                         .font(.caption2.bold())
-                    Text("Right Click")
+                    Text("Right Click (Universal)")
                         .font(.caption2)
                         .foregroundColor(.secondary)
                 }
                 HStack {
                     Text("✋ Move Headphone:")
                         .font(.caption2.bold())
-                    Text("Moves Cursor Smoothly")
+                    Text("Moves Cursor Smoothly (Universal Visual Tracking)")
                         .font(.caption2)
                         .foregroundColor(.secondary)
                 }

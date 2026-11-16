@@ -82,9 +82,9 @@ public struct SettingsTabView: View {
 
     private var gesturesTab: some View {
         Form {
-            Section("JBL Live 770NC Headphone Clicker") {
-                Toggle("Enable JBL 770NC Headphone Taps", isOn: $settingsStore.settings.jblHeadphoneClicksEnabled)
-                Text("Tap earcup once for Left Click; double-tap for Right Click.")
+            Section("Universal Headphone & Earbud Clicker") {
+                Toggle("Enable Headphone / Earbud Tap Clicks", isOn: $settingsStore.settings.jblHeadphoneClicksEnabled)
+                Text("Tap earcup, pinch AirPods stem, or press action button: 1x for Left Click; 2x for Right Click. Universally compatible with Apple AirPods, Sony, Bose, JBL, Sennheiser, Beats, boAt, Galaxy Buds, Pixel Buds & all Bluetooth/wired headsets.")
                     .font(.caption)
                     .foregroundColor(.secondary)
             }

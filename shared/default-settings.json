@@ -44,6 +44,7 @@
   "jaw_drop_click_enabled": false,
   "jaw_drop_ratio_threshold": 0.18,
   "head_pitch_scroll_mode": true,
+  "headphone_clicks_enabled": true,
   "jbl_headphone_clicks_enabled": true,
   "pitch_scroll_sensitivity": 1.0,
   "pitch_scroll_dead_zone_deg": 1.8
