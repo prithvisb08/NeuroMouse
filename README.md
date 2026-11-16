@@ -26,7 +26,7 @@
 ## Repository Structure
 
 ```text
-headmotion-mouse/
+NeuroMouse/
 ├── README.md
 ├── LICENSE
 ├── .gitignore

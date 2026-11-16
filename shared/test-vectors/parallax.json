@@ -1,0 +1,41 @@
+{
+  "k_parallax": 0.65,
+  "cases": [
+    {
+      "psi": 0.0,
+      "theta": 0.0,
+      "Tx": 50.0,
+      "Ty": 20.0,
+      "Tz": 500.0,
+      "expected_psi_corr": -3.7118855393747676,
+      "expected_theta_corr": -1.4888965277150443
+    },
+    {
+      "psi": 5.0,
+      "theta": -3.0,
+      "Tx": -30.0,
+      "Ty": 40.0,
+      "Tz": 600.0,
+      "expected_psi_corr": 6.860563396972636,
+      "expected_theta_corr": -5.479148642288731
+    },
+    {
+      "psi": -8.0,
+      "theta": 4.0,
+      "Tx": 100.0,
+      "Ty": -50.0,
+      "Tz": 450.0,
+      "expected_psi_corr": -16.143725010948483,
+      "expected_theta_corr": 8.121124634841442
+    },
+    {
+      "psi": 0.0,
+      "theta": 0.0,
+      "Tx": 0.0,
+      "Ty": 0.0,
+      "Tz": 500.0,
+      "expected_psi_corr": 0.0,
+      "expected_theta_corr": 0.0
+    }
+  ]
+}

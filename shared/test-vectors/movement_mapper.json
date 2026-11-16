@@ -1,0 +1,33 @@
+{
+  "calibrated_roll_deg": 5.0,
+  "cases": [
+    {
+      "delta_psi": 0.0,
+      "delta_theta": 0.0,
+      "expected_psi_proj": 0.0,
+      "expected_theta_proj": 0.0
+    },
+    {
+      "delta_psi": 5.0,
+      "delta_theta": 0.0,
+      "expected_psi_proj": 4.9809734904587275,
+      "expected_theta_proj": -0.4357787137382908
+    },
+    {
+      "delta_psi": -4.0,
+      "delta_theta": 3.0,
+      "expected_psi_proj": -3.7233115641240078,
+      "expected_theta_proj": 3.3372070652658694
+    },
+    {
+      "delta_psi": 8.0,
+      "delta_theta": -6.0,
+      "expected_psi_proj": 7.4466231282480155,
+      "expected_theta_proj": -6.674414130531739
+    }
+  ],
+  "screen_width": 1920.0,
+  "screen_height": 1080.0,
+  "yaw_range_deg": 15.0,
+  "pitch_range_deg": 10.0
+}
